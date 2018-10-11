@@ -3,7 +3,7 @@ let max_speed = 600,
     min_speed = 100;
 
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -38,11 +38,11 @@ Enemy.prototype.update = function(dt) {
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     //the score will be seen on the grid itself.
-    ctx.fillStyle = "magenta";
-    ctx.font = "20px Times New Roman";
-    ctx.fillText("Classic Arcade Game",170,15);
-    ctx.fillStyle = "#53ea0e";
-    ctx.fillText("Score = " + player.playerScore, 210, 35);
+    ctx.fillStyle = 'magenta';
+    ctx.font = '20px Times New Roman';
+    ctx.fillText('Classic Arcade Game',170,15);
+    ctx.fillStyle = '#53ea0e';
+    ctx.fillText('Score = ' + player.playerScore, 210, 35);
 };
 
 // Now write your own player class
