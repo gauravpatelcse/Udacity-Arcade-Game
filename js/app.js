@@ -37,6 +37,12 @@ Enemy.prototype.update = function(dt) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    //the score will be seen on the grid itself.
+    ctx.fillStyle = "magenta";
+    ctx.font = "20px Times New Roman";
+    ctx.fillText("Classic Arcade Game",170,15);
+    ctx.fillStyle = "#53ea0e";
+    ctx.fillText("Score = " + player.playerScore, 210, 35);
 };
 
 // Now write your own player class
@@ -49,7 +55,7 @@ var Player = function(x, y) {
     this.playerScore = 0;
 };
 
-/2D collision detection
+//2D collision detection
 Player.prototype.update = function() {
     for (var i = 0; i < allEnemies.length; i++) {
         if ((this.y == allEnemies[i].y) && (this.x < allEnemies[i].x + 101) && (this.x + 101 > allEnemies[i].x)) {
