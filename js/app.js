@@ -1,4 +1,4 @@
-//Global Variable
+"use strict";
 let max_speed = 600,
     min_speed = 100;
 
@@ -57,8 +57,8 @@ var Player = function(x, y) {
 
 //2D collision detection
 Player.prototype.update = function() {
-    for (var i = 0; i < allEnemies.length; i++) {
-        if ((this.y == allEnemies[i].y) && (this.x < allEnemies[i].x + 101) && (this.x + 101 > allEnemies[i].x)) {
+    for (var i = 0; i < 3; i++) {
+        if ((this.x < allEnemies[i].x + 72) && (this.x + 72 > allEnemies[i].x) && (this.y < allEnemies[i].y + 72) && (this.y + 72 > allEnemies[i].y)) {
             this.reset();
         }
     }
